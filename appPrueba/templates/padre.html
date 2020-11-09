@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- ahora puedes cargar archivos 'static'
+gracias a esta etiqueta-->
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   {% block content %} 
+   <!--dentro de este bloque ira todo
+    todo lo que no se herede de esta plantilla
+    'bloque cambiante'-->
+   {% endblock %}
+</body>
+</html>

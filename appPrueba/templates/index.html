@@ -1,0 +1,46 @@
+<!--para mas informacion sobre la herencia de 
+    plantillas visita
+    https://docs.djangoproject.com/en/3.1/ref/templates/language/#template-inheritance
+-->
+
+<!--'extends' crea herencia con plantilla-->
+{% extends 'padre.html' %}
+{% load static%}
+{% block content %}
+<head>
+<link rel="stylesheet" href="{% static 'images/css/main.css' %}">
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<!--cuerpo -->
+<h2 class="h2">este es el index</h2>
+<form action="{% url 'cargo' %}" method="post" id="payment-form">
+    {% csrf_token %}
+
+    <select required name="monto" id="monto">
+      <option value="5">te dono 5 dolares</option>
+      <option value="10">te dono 10 dolares</option>
+      <option value="25">te dono 25 dolares</option>
+    </select>
+    <p>Email</p>
+    <input required type="text" name="email" placeholder="Email">
+    <p>Nick name</p>
+    <input required type="text" name="nick-name" placeholder="Nick">
+
+  <div class="form-row">
+    <label for="card-element">
+      Credit or debit card
+    </label>
+    <div id="card-element">
+      <!-- A Stripe Element will be inserted here. -->
+    </div>
+
+    <!-- Used to display form errors. -->
+    <div id="card-errors" role="alert"></div>
+  </div>
+
+  <button>Submit Payment</button>
+</form>
+
+<script src="{% static 'images/js/main.js' %}"></script>
+{% endblock content %}

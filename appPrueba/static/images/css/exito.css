@@ -1,0 +1,45 @@
+h4 {
+    color: lightseagreen;
+    font-family: 'Indie Flower';
+    font-size: x-large;
+}
+
+.h2 {
+    color: mediumseagreen;
+    text-align: center;
+}
+
+#box {
+    border: 2px solid mediumseagreen;
+    border-radius: 6px;
+    padding-bottom: 10px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+#exito-icon {
+    width: 250px;
+}
+
+.imagen-caja {
+    display: flex;
+    justify-content: center;
+}
+
+.boton {
+    display:inline-block;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    margin: 10px;
+}

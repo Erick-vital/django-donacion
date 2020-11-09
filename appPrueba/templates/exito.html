@@ -1,0 +1,23 @@
+{% extends 'padre.html' %}
+{% load static%}
+
+{% block content %}
+<!-- aqui todo lo que no se hereda-->
+<head>
+    <link rel="stylesheet" href="{% static 'images/css/exito.css'%}">
+     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:wght@500&display=swap" rel="stylesheet"> 
+</head>
+
+<br><br>
+<div class="contenedor">
+    <div id="box">
+        <h2 class="h2">Exito!</h2>
+        <div class="imagen-caja">
+            <img id="exito-icon" src="{% static 'images/palomita.jpg' %}" >
+        </div>
+        <h4>gracias por tu contribucion de {{ monto }} dolares</h4>
+
+        <a class="boton" href="{% url 'index' %}">vuelva a la pagina de donacion</a>
+    </div>
+</div>
+{% endblock content %}
