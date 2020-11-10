@@ -13,34 +13,37 @@
 </head>
 
 <!--cuerpo -->
-<h2 class="h2">este es el index</h2>
-<form action="{% url 'cargo' %}" method="post" id="payment-form">
-    {% csrf_token %}
+<h2 class="h2">Inserta tu donancion</h2>
 
-    <select required name="monto" id="monto">
-      <option value="5">te dono 5 dolares</option>
-      <option value="10">te dono 10 dolares</option>
-      <option value="25">te dono 25 dolares</option>
-    </select>
-    <p>Email</p>
-    <input required type="text" name="email" placeholder="Email">
-    <p>Nick name</p>
-    <input required type="text" name="nick-name" placeholder="Nick">
-
-  <div class="form-row">
-    <label for="card-element">
-      Credit or debit card
-    </label>
-    <div id="card-element">
-      <!-- A Stripe Element will be inserted here. -->
+<div class="container">
+  <form action="{% url 'cargo' %}" method="post" id="payment-form">
+      {% csrf_token %}
+  
+      <div class="container2">
+        <select required name="monto" id="monto" class="elemento elemento1">
+          <option value="5">te dono 5 dolares</option>
+          <option value="10">te dono 10 dolares</option>
+          <option value="25">te dono 25 dolares</option>
+        </select>
+        <input required type="text" name="email" placeholder="Email" class="elemento">
+        <input required type="text" name="nick-name" placeholder="Nick" class="elemento">
+      </div>
+  
+    <div class="form-row">
+      <label for="card-element" style="margin: 7px;">
+        Credit or debit card
+      </label>
+      <div id="card-element">
+        <!-- A Stripe Element will be inserted here. -->
+      </div>
+  
+      <!-- Used to display form errors. -->
+      <div id="card-errors" role="alert"></div>
     </div>
-
-    <!-- Used to display form errors. -->
-    <div id="card-errors" role="alert"></div>
-  </div>
-
-  <button>Submit Payment</button>
-</form>
+  
+    <button>Submit Payment</button>
+  </form>
+</div>
 
 <script src="{% static 'images/js/main.js' %}"></script>
 {% endblock content %}
